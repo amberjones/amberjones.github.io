@@ -12,7 +12,7 @@ import Home from "./home"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <section class="flex height-fix">
+    <section class="height-fix">
       <Home />
       <About />
       <Portfolio />

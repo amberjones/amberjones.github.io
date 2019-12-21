@@ -5,12 +5,12 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const Home = () => (
-  <div class="container flex">
+  <section id="home" class="flex">
     <SEO title="Home" />
-    <h1 id="home">Hello!</h1>
+    <h1>Hello!</h1>
     <p>My name is Amber</p>
     <p>I create engaging and creative applications</p>
-  </div>
+  </section>
 )
 
 export default Home

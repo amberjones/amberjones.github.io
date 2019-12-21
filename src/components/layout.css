@@ -18,12 +18,22 @@ footer,
 header,
 main,
 menu,
-nav,
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
 section {
-    padding: 70px 0 70px 0;
     color: #999999;
-    line-height: 11pt;
     position: relative;
+    max-width: 1000px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0px auto;
+    padding: 150px 0px;
+
 }
 section .container {
     max-width: 1200px;
@@ -58,6 +68,7 @@ a {
   -webkit-text-decoration-skip: objects;
   color: rgb(12, 12, 12);
   padding: 5px;
+  margin: 10px;
   align-items: center;
   font: inherit;
 
@@ -396,14 +407,14 @@ dd {
   margin-bottom: 1.45rem;
 }
 p {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  padding-bottom: auto;
+  padding-left: auto;
+  padding-right: auto;
+  padding-top: auto;
+  margin-bottom: 20px;
 }
 figure {
   margin-left: 0;

@@ -1,14 +1,12 @@
 import { Link, Image } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import logo from "../images/ajIcon.svg"
+import logo from "../images/ajIconGRADIANT.svg"
 
 const Header = ({ siteTitle }) => (
   <header style={{
     margin: `auto`,
-    maxWidth: 960,
-    padding: `50px`,
-    textAlign: `center`,
+    padding: `0, 50`,
   }}
   >
     <nav class="nav">
