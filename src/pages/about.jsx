@@ -5,7 +5,8 @@ import SEO from "../components/seo"
 const About = () => (
     <div class="container flex">
     <SEO title="About" />
-      <h1><a id="about"></a> Hi from the About page</h1>
+    <h1 id="about"> Hi from the About page</h1>
+    
     <p>Welcome to About ME</p>
     </div>
 )

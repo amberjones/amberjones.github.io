@@ -13,17 +13,18 @@ const Header = ({ siteTitle }) => (
       style={{
         margin: `0 auto`,
         maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+        padding: `20px`,
       }}
     >
-      <h3 style={{ margin: 1, color: "white" }}>
-        <Link to="/"> home </Link>
-        <a href="#about"> about me </a>
-        <a href="#portfolio"> portfolio </a>
-        <a href="#contact"> contact </a>
-      </h3>
+      <div id="header-links">
+        <Link to="#/"> home </Link>
+        <Link to="#about"> about me </Link>
+        <Link to="#portfolio"> portfolio </Link>
+        <Link to="#contact"> contact </Link>
+      </div>
     </div>
   </header>
+  
 )
 
 Header.propTypes = {

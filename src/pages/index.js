@@ -6,17 +6,15 @@ import SEO from "../components/seo"
 import About from "./about"
 import Portfolio from "./portfolio"
 import Contact from "./contact"
+import Home from "./home"
+
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <section class="flex height-fix">
-      <h1><a id="home"></a> Hello!</h1>
-      <p>My name is Amber</p>
-      <p>I create engaging and creative applications</p>
-      <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      </div>
-      <About/>
+      <Home />
+      <About />
       <Portfolio />
       <Contact />
     </section>

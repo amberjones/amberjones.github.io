@@ -8,9 +8,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-a {
-  color: red;
-}
 article,
 aside,
 details,
@@ -62,11 +59,16 @@ template {
 }
 a {
   background-color: transparent;
+  text-decoration: none;
   -webkit-text-decoration-skip: objects;
+  color: white;
+  padding: 5px;
+  align-items: center;
 }
 a:active,
 a:hover {
   outline-width: 0;
+  color: aquamarine;
 }
 abbr[title] {
   border-bottom: none;
