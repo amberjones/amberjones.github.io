@@ -5,10 +5,10 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const Contact = () => (
-  <section id="contact">
-    <SEO title="Page two" />
-    <h1>Hi from the About page</h1>
-    <p>Welcome to About ME</p>
+  <section class="flex">
+    <SEO title="Contact" />
+    <h1><a id="contact"></a> Hi from the Contact page</h1>
+    <p>Here is how you can contact me</p>
   </section>
 
 )

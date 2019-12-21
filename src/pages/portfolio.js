@@ -5,10 +5,10 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const Portfolio = () => (
-  <section id="portfolio">
-    <SEO title="Page two" />
-    <h1>Hi from the About page</h1>
-    <p>Welcome to About ME</p>
+  <section id="portfolio" class="flex">
+    <SEO title="Portfolio" />
+    <h1><a id="about"></a> Hi from the Portfolio page</h1>
+    <p>Welcome to my portfolio</p>
   </section>
 
 )
