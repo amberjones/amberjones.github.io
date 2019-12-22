@@ -7,8 +7,8 @@ import SEO from "../components/seo"
 const Contact = () => (
   <section id="contact" class="flex">
     <SEO title="Contact" />
-    <h1> Hi from the Contact page</h1>
-    <p>Here is how you can contact me</p>
+    <h2> Want to get in contact?</h2>
+    <p>Say hi at<a href="mailto:hello@ambermjones.dev">hello@ambermjones.dev</a></p>
   </section>
 
 )

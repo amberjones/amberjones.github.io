@@ -1,17 +1,25 @@
 import { Link, Image } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import logo from "../images/ajIconGRADIANT.svg"
+import logo from "../images/ajIcon.svg"
 
 const Header = ({ siteTitle }) => (
   <header style={{
     margin: `auto`,
-    padding: `0, 50`,
+    padding: `0, 40`,
   }}
   >
-    <nav class="nav">
-      <div class="nav_Styledlogo">
-        <img src={logo} alt="Logo" style={{ width: 50, height: 50 }}></img>
+    <nav class="nav" style={{marginLeft: 30, marginRight: 30}}>
+      <div class="nav_Styledlogo" style={{paddingTop: 20 }}>
+        <a href="https://dev.to/amberjones">
+          <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" alt="AmberJ's DEV Profile" height="60" width="60"></img>
+        </a>
+        <a href="https://www.linkedin.com/in/amber-m-jones/">
+          <img src="https://i.imgur.com/1f0y9eu.png" alt="AmberJ's LinkedIn Profile" height="60" width="60"></img>
+        </a>
+        <a href="https://github.com/amberjones">
+          <img src="https://i.imgur.com/2o38lKB.png" alt="AmberJ's Github Profile" height="60" width="60"></img>
+        </a>
       </div>
       <div class="nav_Links">
       <Link to="#about"> About</Link>
