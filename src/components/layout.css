@@ -2,7 +2,7 @@ html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  background-color: rgb(161, 87, 133);
+  background-color: rgb(44, 44, 44);
 }
 article,
 aside,
@@ -16,17 +16,39 @@ figure,
     align-items: center;
 }
 footer,
-header,
+header {
+  background-color: rgb(44, 44, 44);
+}
 main,
 menu,
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+nav a {
+  font-weight: bold;
+  background-color: transparent;
+  text-decoration: none;
+  -webkit-text-decoration-skip: objects;
+  color: rgb(143, 143, 143);
+  padding: 5px;
+  margin: 10px;
+  align-items: center;
+  font: inherit;
+}
+.sticky {
+  position: fixed;
+  top: 0;
   width: 100%;
 }
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 60px;
+}
 section {
-    color: #ffffff;
+    color: #f0f0f0;
     position: relative;
     max-width: 1000px;
     justify-content: center;
@@ -69,18 +91,13 @@ template {
 a {
   background-color: transparent;
   text-decoration: none;
-  -webkit-text-decoration-skip: objects;
   color: rgb(143, 143, 143);
-  padding: 5px;
-  margin: 10px;
-  align-items: center;
-  font: inherit;
-
+  font: inherit
 }
 a:active,
 a:hover {
   outline-width: 0;
-  color: rgb(255, 255, 255);
+  color: rgb(190, 30, 2);
 }
 abbr[title] {
   border-bottom: none;

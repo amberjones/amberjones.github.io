@@ -8,7 +8,7 @@ const Contact = () => (
   <section id="contact" class="flex">
     <SEO title="Contact" />
     <h2> Want to get in contact?</h2>
-    <p>Say hi at<a href="mailto:hello@ambermjones.dev">hello@ambermjones.dev</a></p>
+    <p><a href="mailto:hello@ambermjones.dev">hello@ambermjones.dev</a></p>
   </section>
 
 )
