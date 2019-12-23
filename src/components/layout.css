@@ -17,7 +17,9 @@ figure,
 }
 footer,
 header {
-  background-color: rgb(44, 44, 44);
+  padding: 10px;
+  z-index: 100;
+  background-color: rgb(43, 43, 43);
 }
 main,
 menu,
@@ -37,12 +39,15 @@ nav a {
   align-items: center;
   font: inherit;
 }
+header .icon {
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
 .sticky {
   position: fixed;
   top: 0;
   width: 100%;
 }
-
 /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
 .sticky + .content {
   padding-top: 60px;
