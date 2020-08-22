@@ -1,0 +1,14 @@
+{
+  "name": "aj_portfolio_2020",
+  "version": "1.0.0",
+  "description": "Portfolio 2020 website",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+  },
+  "author": "Amber Jones",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.14.1"
+  }
+}
