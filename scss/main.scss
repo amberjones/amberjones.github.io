@@ -61,6 +61,21 @@ main {
     }
   }
 
+  // Contact Page
+  .boxes {
+    display: flex;
+    // when the view gets too small
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1rem;
+
+    div {
+      // style the individual divs here
+      @include easeOut;
+    }
+  }
+
   &#home {
     // never have a scrollbar
     overflow: hidden;
@@ -104,6 +119,28 @@ main {
     background: lighten($primary-color, 5);
     padding: 0.5rem;
     border-bottom: $secondary-color 5px solid;
+  }
+}
+
+//Work/Projects
+.projects {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+
+  img {
+    width: 100%;
+    border: 3px set-text-color($primary-color) solid;
+
+    &:hover {
+      opacity: 0.5;
+      border-color: $secondary-color;
+      @include easeOut;
+    }
+  }
+
+  .icons {
+    margin-top: 0px;
   }
 }
 
