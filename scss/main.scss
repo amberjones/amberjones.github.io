@@ -7,7 +7,7 @@ body {
   color: set-text-color($primary-color);
   height: 100%;
   margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: $primary-font-family;
   line-height: 1.5;
 }
 
@@ -16,14 +16,12 @@ h1,
 h2,
 h3 {
   margin: 0;
-  font-weight: 400;
   &.lg-heading {
-    font-size: 6rem;
+    font-size: 4rem;
   }
   &.sm-heading {
     margin-bottom: 2rem;
-    padding: 0.2rem 1rem;
-    background: rgba(lighten($primary-color, 2), 0.3);
+    padding: 0.5rem 0 0.5rem 0;
   }
 }
 
@@ -43,13 +41,21 @@ header {
   color: $secondary-color;
 }
 
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 main {
   padding: 4rem;
   // viewport height - footer
   min-height: calc(100vh - 60px);
 
   .icons {
-    margin-top: 1rem;
+    margin-top: 2rem;
     a {
       color: set-text-color($primary-color);
       padding: 0.4rem;
@@ -73,6 +79,9 @@ main {
     div {
       // style the individual divs here
       @include easeOut;
+
+      &:hover {
+      }
     }
   }
 
@@ -81,6 +90,42 @@ main {
     overflow: hidden;
     h1 {
       margin-top: 20vh; //viewport height
+    }
+    h2 {
+      display: block;
+      width: fit-content;
+      position: relative;
+      color: transparent;
+      animation: text-reveal 0.5s ease forwards;
+      animation-delay: 1.5s;
+    }
+    h2 span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 0;
+      background-color: $secondary-color;
+      animation: text-reveal-box 1s ease;
+      animation-delay: 1s;
+    }
+
+    .cta {
+      display: inline-block;
+      padding: 10px 30px;
+      color: $secondary-color;
+      background-color: transparent;
+      border: 2px solid $secondary-color;
+      font-size: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+      @include easeOut;
+
+      &:hover {
+        color: white;
+        background-color: $secondary-color;
+        @include easeOut();
+      }
     }
   }
 }
@@ -97,10 +142,11 @@ main {
     grid-area: bioimage;
     margin: auto;
     border-radius: 50%;
-    border: $secondary-color 3px solid;
+    border: $secondary-color 5px solid;
   }
 
   .bio {
+    background: $primary-color;
     grid-area: bio;
     font-size: 1.5rem;
   }
@@ -119,6 +165,12 @@ main {
     background: lighten($primary-color, 5);
     padding: 0.5rem;
     border-bottom: $secondary-color 5px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .techstack-boxes {
+    }
   }
 }
 

@@ -64,7 +64,7 @@
   &-nav {
     margin: 0;
     padding: 0;
-    background: darken($primary-color, 5);
+    background-color: rgba(darken($primary-color, 5), 0.9);
     list-style-type: none;
     font-weight: 600;
     transform: translate3d(0, -100%, 0);
@@ -78,7 +78,7 @@
 
   // Branding sidess
   &-branding {
-    background: $primary-color;
+    background: rgba($primary-color, 0.9);
     transform: translate3d(0, 100%, 0);
     @include easeOut;
 
@@ -92,7 +92,7 @@
       height: 250px;
       background: url("../img/profilepic4.jpeg");
       border-radius: 50%;
-      border: solid 6px $secondary-color;
+      border: solid 5px $secondary-color;
       .img {
         width: 100%;
         height: 100%;
