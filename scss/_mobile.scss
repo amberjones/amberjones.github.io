@@ -1,25 +1,129 @@
 // Widescreens
 @include mediaXl {
-  .projects {
-    grid-template-columns: repeat(4, 1fr);
+  #projects {
+    .all-projects {
+      .project-item {
+        flex-direction: row;
+        height: 400px;
+        margin: 0;
+        width: 100%;
+        border-radius: 0;
+
+        &:nth-child(even) {
+          flex-direction: row-reverse;
+        }
+      }
+      .project-info {
+        height: 100%;
+      }
+      .project-img {
+        height: 100%;
+      }
+    }
+  }
+  #home h1 {
+    font-size: 7rem;
+  }
+
+  #about {
+    .about {
+      flex-direction: row;
+      .col-left {
+        width: 600px;
+        height: 400px;
+        padding-left: 60px;
+      }
+      .col-right {
+        text-align: left;
+        padding: 30px;
+        h1 {
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  #contact {
+    .contact {
+      flex-direction: column;
+      padding: 100px 0;
+      align-items: center;
+      justify-content: center;
+      min-width: 20vh;
+    }
+    .contact-items {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      margin: 0;
+      .contact-item {
+        margin: 0;
+        flex-direction: row;
+        .contact-info {
+          width: 100%;
+          text-align: left;
+          padding-left: 20pxauto;
+        }
+      }
+    }
   }
 }
 
 // Desktops and Laptops
 @include mediaLg {
-  .projects {
-    grid-template-columns: repeat(3, 1fr);
+  #about {
+    .about {
+      flex-direction: row;
+      .col-left {
+        width: 600px;
+        height: 400px;
+        padding-left: 60px;
+      }
+      .col-right {
+        text-align: left;
+        padding: 30px;
+        h1 {
+          text-align: left;
+        }
+      }
+    }
+  }
+  #contact {
+    .contact {
+      flex-direction: column;
+      padding: 100px 0;
+      align-items: center;
+      justify-content: center;
+      min-width: 20vh;
+    }
+    .contact-items {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      margin: 0;
+      .contact-item {
+        margin: 0;
+        flex-direction: row;
+        .contact-info {
+          width: 100%;
+          text-align: left;
+          padding-left: 20px;
+        }
+      }
+    }
   }
 }
 
 //Tablets & small laptops
 @include mediaMd {
-  main {
+  section {
     align-items: center;
     text-align: center;
     padding: 2rem;
 
-    .lg-heading {
+    .section-title {
       line-height: 1;
       margin-bottom: 1rem;
       font-size: 5rem;
@@ -48,41 +152,27 @@
 
     .portrait {
       // change it to the small version of profile image
-      // background: url('../dist/img/');
+      background: url(../img/profilepic1.jpeg);
       width: 150px;
       height: 150px;
     }
-  }
-  .about-info {
-    // map out what you want where you want
-    grid-template-areas:
-      "bioimage"
-      "bio"
-      "job1"
-      "job2"
-      "job3";
-    grid-template-columns: 1fr;
-  }
-
-  .projects {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 //Smartphones
 @include mediaSm {
-  main {
+  section {
     padding: 2rem;
     #home h1 {
       margin-top: 10vh;
     }
 
-    .lg-heading {
+    .section-title {
       margin-top: 1rem;
       font-size: 3rem;
     }
   }
-  .projects {
-    grid-template-columns: 1fr;
+  #projects .project-info h1 {
+    font-size: 3rem;
   }
 }

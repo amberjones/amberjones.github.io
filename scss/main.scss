@@ -1,61 +1,91 @@
 @import "config";
 @import "menu";
+@import "carousel";
 
-body {
-  @include background;
-  background: $primary-color;
-  color: set-text-color($primary-color);
-  height: 100%;
+* {
+  padding: 0;
   margin: 0;
-  font-family: $primary-font-family;
-  line-height: 1.5;
+  box-sizing: border-box;
 }
-
-// Headings
-h1,
-h2,
-h3 {
-  margin: 0;
-  &.lg-heading {
-    font-size: 4rem;
-  }
-  &.sm-heading {
-    margin-bottom: 2rem;
-    padding: 0.5rem 0 0.5rem 0;
-  }
+html {
+  background: $primary-color;
+  font-family: $primary-font-family;
+  color: set-text-color($primary-color);
+  line-height: 1.5;
+  scroll-behavior: smooth;
 }
 
 a {
   color: #fff;
   text-decoration: none;
 }
-
-header {
-  // so it stays when scrolling
-  position: fixed;
-  z-index: 2;
+img {
+  height: 100%;
   width: 100%;
+  object-fit: cover;
 }
 
+// Headings
+
+.section-title {
+  font-size: 4rem;
+  font-weight: 300;
+  color: set-text-color($primary-color);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  text-align: center;
+}
+.sm-heading {
+  margin-bottom: 2rem;
+  padding: 0.5rem 0 0.5rem 0;
+}
 .text-secondary {
   color: $secondary-color;
 }
-
-.container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+.brand h1 {
+  text-transform: uppercase;
+  color: set-text-color($primary-color);
+}
+.brand h1 span {
+  color: $secondary-color;
 }
 
-main {
-  padding: 4rem;
-  // viewport height - footer
-  min-height: calc(100vh - 60px);
+#header {
+  // so it stays when scrolling
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: auto;
+  .header {
+    min-height: 8vh;
+  }
+}
+
+// used in multi sections
+.container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section {
+  .section-title {
+    font-size: 4rem;
+    font-weight: 300;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    text-align: center;
+  }
 
   .icons {
     margin-top: 2rem;
+    padding: 0.5rem 0 0.5rem 0;
     a {
       color: set-text-color($primary-color);
       padding: 0.4rem;
@@ -67,33 +97,22 @@ main {
     }
   }
 
-  // Contact Page
-  .boxes {
-    display: flex;
-    // when the view gets too small
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-top: 1rem;
-
-    div {
-      // style the individual divs here
-      @include easeOut;
-
-      &:hover {
-      }
-    }
-  }
+  // Home Section
 
   &#home {
-    // never have a scrollbar
-    overflow: hidden;
+    @include background;
+    .home {
+      max-width: 1200px;
+      margin: 0 auto;
+      justify-content: column;
+      text-align: center;
+    }
     h1 {
-      margin-top: 20vh; //viewport height
+      position: relative;
+      font-size: 4rem;
+      font-weight: 500;
     }
     h2 {
-      display: block;
-      width: fit-content;
       position: relative;
       color: transparent;
       animation: text-reveal 0.5s ease forwards;
@@ -113,9 +132,8 @@ main {
     .cta {
       display: inline-block;
       padding: 10px 30px;
-      color: $secondary-color;
-      background-color: transparent;
-      border: 2px solid $secondary-color;
+      color: white;
+      background-color: $secondary-color;
       font-size: 2rem;
       text-transform: uppercase;
       letter-spacing: 0.1rem;
@@ -123,85 +141,216 @@ main {
 
       &:hover {
         color: white;
-        background-color: $secondary-color;
+        background: darken($secondary-color, 10);
+
         @include easeOut();
       }
     }
   }
 }
 
-.about-info {
-  display: grid;
-  grid-gap: 30px;
-  grid-template-areas:
-    "bioimage bio bio"
-    "job1 job2 job3";
-  grid-template-columns: repeat(3, 1fr);
+//Work/Projects
+
+#projects {
+  .projects {
+    flex-direction: column;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 100px 0;
+  }
+  .section-title {
+    margin-bottom: 50px;
+  }
+  .all-projects {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .project-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    min-width: 0;
+    .project-img img {
+      @include easeOut();
+      float: right;
+    }
+    &:hover .project-img {
+      img {
+        transform: scale(1.1);
+      }
+      &::after {
+        opacity: 0;
+      }
+    }
+  }
+  .project-info {
+    padding: 30px;
+    flex-basis: 50%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    background: lighten($primary-color, 5);
+    text-align: left;
+
+    h1 {
+      font-size: 4rem;
+      font-weight: 500;
+    }
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 500;
+      margin-top: 10px;
+    }
+
+    //github icon
+    .icons {
+      margin: 2px 0;
+      padding: none;
+    }
+
+    .techstack-boxes {
+      margin-top: 10px;
+      i {
+        margin: 0 0.5rem;
+      }
+    }
+  }
+  .project-img {
+    flex-basis: 50%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    min-width: 0;
+    float: right;
+
+    // &:after {
+    //   content: "";
+    //   position: absolute;
+    //   left: 0;
+    //   top: 0;
+    //   height: 100%;
+    //   width: 100%;
+    //   background: rgba($primary-color, 0.3);
+    // }
+  }
+}
+
+// About Section
+#about .about {
+  flex-direction: column-reverse;
+  text-align: center;
+  max-width: 1200px;
+  // top and bottom
+  margin: 0 auto;
+  padding: 100px 20px;
+
+  .col-left {
+    width: 250px;
+    height: 250px;
+  }
+
+  .col-right {
+    width: 100%;
+    .h3 {
+      font-size: 1.8rem;
+      font-weight: 500;
+      letter-spacing: 0.2rem;
+      margin-bottom: 10px;
+    }
+    p {
+      margin-bottom: 20px;
+    }
+  }
 
   .bio-image {
-    grid-area: bioimage;
+    height: 100%;
+    width: 100%;
+    position: relative;
     margin: auto;
     border-radius: 50%;
     border: $secondary-color 5px solid;
   }
-
-  .bio {
-    background: $primary-color;
-    grid-area: bio;
-    font-size: 1.5rem;
-  }
-
-  .job-1 {
-    grid-area: job1;
-  }
-  .job-2 {
-    grid-area: job2;
-  }
-  .job-3 {
-    grid-area: job3;
-  }
-
-  .job {
-    background: lighten($primary-color, 5);
-    padding: 0.5rem;
-    border-bottom: $secondary-color 5px solid;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    .techstack-boxes {
-    }
-  }
 }
 
-//Work/Projects
-.projects {
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: repeat(4, 1fr);
+// Contact Page
+#contact {
+  .contact {
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
-  img {
-    width: 100%;
-    border: 3px set-text-color($primary-color) solid;
+  .contact-items {
+    width: 400px;
+  }
+
+  .contact-item {
+    @include easeOut;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    box-shadow: 0px 0px 18px 0 #ffffff2c;
 
     &:hover {
-      opacity: 0.5;
-      border-color: $secondary-color;
-      @include easeOut;
+      box-shadow: 0px 0px 5px 0 #ffffff2c;
     }
   }
-
-  .icons {
-    margin-top: 0px;
+  .contact-info {
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+    h2 {
+      font-size: 1.3rem;
+      line-height: 2rem;
+      font-weight: 500;
+    }
+  }
+  i {
+    font-size: 50px;
+    margin-right: 10px;
+    margin-bottom: 10px;
   }
 }
 
-#main-footer {
-  text-align: center;
-  padding: 1rem;
+#footer {
   background: darken($primary-color, 10);
   color: set-text-color($primary-color);
-  height: 60px;
+  .footer {
+    min-height: 50px;
+    flex-direction: column;
+    padding-top: 50px;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+
+  .brand h1 {
+    text-transform: uppercase;
+    color: set-text-color($primary-color);
+  }
+  .brand h1 span {
+    color: $secondary-color;
+  }
+  p {
+    color: set-text-color($primary-color);
+    font-size: 1.3rem;
+  }
 }
 
 @import "mobile";
