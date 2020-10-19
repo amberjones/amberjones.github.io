@@ -512,4 +512,8 @@ section#home .cta {
       margin-top: 1rem;
       font-size: 3rem; }
   #projects .project-info h1 {
-    font-size: 3rem; } }
+    font-size: 3rem; }
+  #projects .projects {
+    padding: 0; }
+  #about .about {
+    padding: 0; } }

@@ -175,4 +175,15 @@
   #projects .project-info h1 {
     font-size: 3rem;
   }
+
+  #projects {
+    .projects {
+      padding: 0;
+    }
+  }
+  #about {
+    .about {
+      padding: 0;
+    }
+  }
 }
